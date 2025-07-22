@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners for the main container */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            max-width: 90%; /* Responsive max-width */
+            width: 500px; /* Fixed width for larger screens */
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Thank You Page Content -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Thank You!</h1>
+        <p class="text-gray-600 mb-4">Your order has been placed successfully.</p>
+        <p class="text-gray-600">We appreciate your business!</p>
+        <p class="text-gray-600 mt-6">
+            <a href="index.html" class="text-indigo-600 hover:underline">Return to Product Page</a>
+        </p>
+    </div>
+</body>
+</html>
