@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners for the main container */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            max-width: 90%; /* Responsive max-width */
+            width: 500px; /* Fixed width for larger screens */
+            padding: 2rem;
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            max-height: 250px; /* Limit image height */
+            object-fit: cover;
+            border-radius: 0.75rem; /* Rounded corners for image */
+            margin-bottom: 1.5rem;
+        }
+        .btn-primary {
+            background-color: #4f46e5; /* Indigo 600 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem; /* More rounded buttons */
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-primary:hover {
+            background-color: #4338ca; /* Indigo 700 on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Product Page Content -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Our Awesome Product</h1>
+        <img src="https://placehold.co/400x250/a78bfa/ffffff?text=Product+Image" alt="Product Image" class="product-image mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-2">Stylish Gadget Pro</h2>
+        <p class="text-gray-600 mb-4">
+            Experience the future with our new Stylish Gadget Pro. It's packed with features
+            to make your life easier and more enjoyable. Limited stock available!
+        </p>
+        <p class="text-xl font-bold text-indigo-600 mb-6">$99.99</p>
+        <button id="addToCartBtn" class="btn-primary">Add to Cart</button>
+    </div>
+
+    <script>
+        const addToCartBtn = document.getElementById('addToCartBtn');
+
+        // Event listener for "Add to Cart" button
+        addToCartBtn.addEventListener('click', () => {
+            // Navigate to the checkout page
+            window.location.href = 'checkout.html';
+        });
+    </script>
+</body>
+</html>
