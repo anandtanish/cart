@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners for the main container */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            max-width: 90%; /* Responsive max-width */
+            width: 500px; /* Fixed width for larger screens */
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #4f46e5; /* Indigo 600 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem; /* More rounded buttons */
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-primary:hover {
+            background-color: #4338ca; /* Indigo 700 on hover */
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db; /* Gray 300 */
+            border-radius: 0.5rem; /* Slightly rounded input fields */
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box; /* Include padding in width */
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            color: #374151; /* Gray 700 */
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Checkout Page (Form Fill-up) Content -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Checkout Information</h1>
+        <form id="checkoutForm">
+            <div class="mb-4">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required class="focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required class="focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" name="address" rows="3" required class="focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Submit Order</button>
+        </form>
+    </div>
+
+    <script>
+        const checkoutForm = document.getElementById('checkoutForm');
+
+        // Event listener for "Submit Order" button on the checkout form
+        checkoutForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Basic form validation
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            if (fullName === '' || email === '' || address === '') {
+                console.error("Please fill in all fields.");
+                // In a real application, you'd show a user-friendly error message on the page.
+                return;
+            }
+
+            // Simulate form submission (in a real app, you'd send data to a server)
+            console.log('Form Submitted!', {
+                fullName,
+                email,
+                address
+            });
+
+            // Clear the form fields after submission
+            checkoutForm.reset();
+
+            // Navigate to the thank you page
+            window.location.href = 'thankyou.html';
+        });
+    </script>
+</body>
+</html>
